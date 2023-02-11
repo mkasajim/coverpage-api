@@ -1,0 +1,1 @@
+{"id":"63d01a18-331d-4fb4-a0fb-6d02d2eddbfc","space":29464,"runtime":"python3.9","name":"coverpage-api","path":"v5n6uw","project":"c0dozqy1","account":"144798365827","region":"ap-southeast-1","deps":["fastapi","python-docx","shortuuid"],"envs":null,"public":true,"log_level":"debug","cron":""}
