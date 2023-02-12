@@ -4,7 +4,7 @@ RUN apt update && apt upgrade -y
 
 RUN apt install git python3-pip -y
 
-RUN pip install fastapi python-docx shortuuid
+RUN pip install fastapi python-docx shortuuid uvicorn
 
 RUN cd /
 
@@ -16,4 +16,4 @@ RUN cd /coverpage-api
 
 WORKDIR /coverpage-api
 
-CMD python3 main.py
+CMD python3 api.py
