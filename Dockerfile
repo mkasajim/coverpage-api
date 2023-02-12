@@ -1,4 +1,4 @@
-FROM python:3.8.10-alpine
+FROM ubuntu:20.04
 
 RUN apt update && apt upgrade -y
 
