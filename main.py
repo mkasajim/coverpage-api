@@ -10,7 +10,7 @@ app = FastAPI()
 
 @app.get("/api")
 async def create_cover(id: str, course_code: str, course_title: str, teacher_name: str, teacher_designation: str, date: str):
-    document = await Document("./Lab Report Template.docx")
+    document = Document("./Lab Report Template.docx")
 
     # unique_id = shortuuid.uuid()
 
@@ -28,16 +28,16 @@ async def create_cover(id: str, course_code: str, course_title: str, teacher_nam
     replace_str5 = teacher_designation
     replace_str6 = date
 
-    await document_replace_text(document, regex1, replace_str1)
-    await document_replace_text(document, regex2, replace_str2)
-    await document_replace_text(document, regex3, replace_str3)
-    await document_replace_text(document, regex4, replace_str4)
-    await document_replace_text(document, regex5, replace_str5)
-    await document_replace_text(document, regex6, replace_str6)
+    document_replace_text(document, regex1, replace_str1)
+    document_replace_text(document, regex2, replace_str2)
+    document_replace_text(document, regex3, replace_str3)
+    document_replace_text(document, regex4, replace_str4)
+    document_replace_text(document, regex5, replace_str5)
+    document_replace_text(document, regex6, replace_str6)
 
     # download_url = f"downloads/{unique_id}_lab_report_coverpage.docx"
-    download_url = f"/lab_report_coverpage.docx"
-    await document.save(download_url)
+    download_url = f"./downloads/lab_report_coverpage.docx"
+    document.save(download_url)
 
     return {"download_url": download_url}
 
