@@ -16,4 +16,4 @@ RUN cd /coverpage-api
 
 WORKDIR /coverpage-api
 
-CMD python3 api.py
+CMD uvicorn main:app
