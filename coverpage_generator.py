@@ -3,7 +3,7 @@ import re
 from docx import Document
 
 
-async def paragraph_replace_text(paragraph, regex, replace_str):
+def paragraph_replace_text(paragraph, regex, replace_str):
     """Return `paragraph` after replacing all matches for `regex` with `replace_str`.
 
     `regex` is a compiled regular expression prepared with `re.compile(pattern)`
@@ -55,7 +55,7 @@ async def paragraph_replace_text(paragraph, regex, replace_str):
 
     return paragraph
 
-async def document_replace_text(document, regex, replace_str):
+def document_replace_text(document, regex, replace_str):
     """Return `document` after replacing all matches for `regex` with `replace_str`.
 
     `regex` is a compiled regular expression prepared with `re.compile(pattern)`
