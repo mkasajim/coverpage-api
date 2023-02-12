@@ -1,4 +1,4 @@
-FROM FROM python:3.8.10-alpine
+FROM python:3.8.10-alpine
 
 RUN apt update && apt upgrade -y
 
