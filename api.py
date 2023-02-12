@@ -37,5 +37,5 @@ def create_cover(id: str, course_code: str, course_title: str, teacher_name: str
 
 
 if __name__ == "__main__":
-    PORT = int(os.environ.get('PORT', 3000))
-    uvicorn.run(app, host="127.0.0.1", port=PORT)
+    PORT = int(os.environ.get('PORT', 8080))
+    uvicorn.run(app, host="0.0.0.0", port=PORT)

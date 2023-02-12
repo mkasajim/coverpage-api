@@ -1,4 +1,4 @@
-FROM heroku/heroku:20
+FROM FROM python:3.8.10-alpine
 
 RUN apt update && apt upgrade -y
 
@@ -16,4 +16,6 @@ RUN cd /coverpage-api
 
 WORKDIR /coverpage-api
 
-CMD python3 api.py
+CMD ["python" "api.py"]
+
+EXPOSE 8080
