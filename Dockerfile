@@ -16,6 +16,6 @@ RUN cd /coverpage-api
 
 WORKDIR /coverpage-api
 
-CMD ["python" "api.py"]
+CMD ["python","api.py"]
 
 EXPOSE 8080
