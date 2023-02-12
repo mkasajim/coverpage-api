@@ -16,4 +16,4 @@ RUN cd /coverpage-api
 
 WORKDIR /coverpage-api
 
-CMD gunicorn -w 4 -k uvicorn.workers.UvicornWorker main:app
+CMD python3 api.py
