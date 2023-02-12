@@ -1,1 +1,1 @@
-web: uvicorn main:app
+web: python3 api.py
