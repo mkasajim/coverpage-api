@@ -16,4 +16,4 @@ RUN cd /coverpage-api
 
 WORKDIR /coverpage-api
 
-CMD uvicorn main:app
+CMD gunicorn -w 4 -k uvicorn.workers.UvicornWorker main:app
