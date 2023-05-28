@@ -4,3 +4,5 @@ shortuuid
 uvicorn
 gunicorn
 schedule
+deta
+python-multipart
