@@ -26,7 +26,8 @@ async def homepage():
                 <a href="#" class="brand-logo center">Coverpage Generator</a>
                 </div>
             </nav>
-            <div class="container center" style="margin-top:16px">
+            <div style="margin-left:16px">
+            <div class="container" style="margin-top:16px">
                 <form id="cover">
                 <div>
                 <div class="input-field inline">
@@ -58,6 +59,7 @@ async def homepage():
                         <div class="circle"></div>
                         </div>
                     </div>
+                </div>
                 </div>
             </div>
 
