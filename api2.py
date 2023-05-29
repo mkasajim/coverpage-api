@@ -26,21 +26,21 @@ async def homepage():
                 <a href="#" class="brand-logo center">Coverpage Generator</a>
                 </div>
             </nav>
-            <div class="container">
+            <div class="container center" style="margin-top:16px">
                 <form id="cover">
                 <div>
                 <div class="input-field inline">
                     <input id="id" type="text" required>
                     <label for="id">ID</label>
-                    <span class="helper-text" validate>e.g. 18PHR053</span>
+                    <span class="helper-text left" validate>e.g. 18PHR053</span>
                 </div>
                 </div>
                 <div>
                 <div class="input-field inline">
                     <input id="subdate" type="text" required>
                     <label for="subdate">Submission date</label>
-                    <span class="helper-text" validate>e.g. 01-06-2023</span>
-                    <div class="right" style="margin-top: 8px">
+                    <span class="helper-text left" validate>e.g. 01-06-2023</span>
+                    <div class="right" style="margin-top: 32px">
                         <button class="btn waves-effect waves-light" type="submit" name="action">Download</button>
                     </div>
                 </div>
