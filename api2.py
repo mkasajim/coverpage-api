@@ -56,3 +56,7 @@ async def download_file():
 async def download_file(file_name: str):
     file_path = f"downloads/{file_name}"
     return FileResponse(file_path)
+
+if __name__ == "__main__":
+    PORT = int(os.environ.get('PORT', 8080))
+    uvicorn.run(app, host="0.0.0.0", port=PORT)
