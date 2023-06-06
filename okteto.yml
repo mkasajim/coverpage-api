@@ -1,0 +1,9 @@
+deploy:
+  compose:
+    - file: docker-compose.yml
+      services:
+        - app
+  endpoints:
+    - path: /
+      service: app
+      port: 8080
