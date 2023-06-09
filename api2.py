@@ -350,19 +350,22 @@ async def preview():
                 <iframe src="" 
                 frameborder="0" allowfullscreen>
                 </iframe>
-                <script>
-                var host = "https://" + $(location).attr('hostname') + "/";
-                var download_url = host + "downloads/" + {file_name};
-                var previewAPI = "https://view.officeapps.live.com/op/view.aspx?src=";
-                var URI = previewAPI + download_url + "&amp;wdEmbedCode=0";
-
-                $(document).ready(function(){
-                    
-                        $("iframe").attr("src", URI);
-                    
-                });
-                </script>
             </div>
+            <script>
+            var host = "https://" + $(location).attr('hostname') + "/";
+            var download_url = host + "downloads/" + {file_name};
+            var previewAPI = "https://view.officeapps.live.com/op/view.aspx?src=";
+            var URI = previewAPI + download_url + "&amp;wdEmbedCode=0";
+
+            $(document).ready(function(){
+                
+                    $("iframe").attr("src", URI);
+                
+            });
+            </script>
+            </body>
+            </html>
+            
     """
 
 if __name__ == "__main__":
