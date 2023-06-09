@@ -353,7 +353,9 @@ async def preview():
             </div>
             <script>
             var host = "https://" + $(location).attr('hostname') + "/";
-            var download_url = host + "downloads/" + {file_name};
+            var url = location.href;
+            var filename = url.split('/').pop()
+            var download_url = host + "downloads/" + filename;
             var previewAPI = "https://view.officeapps.live.com/op/view.aspx?src=";
             var URI = previewAPI + download_url + "&amp;wdEmbedCode=0";
 
