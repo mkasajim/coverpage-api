@@ -185,7 +185,7 @@ async def homepage():
                     var download_url = host + response.download_url;
                     console.log(download_url);
                     var filename = download_url.split('/').pop()
-                    var preview_uri = host + "preview/" + filename;
+                    var preview_uri = host + "/preview/" + filename;
                     //window.location.href = previewAPI + download_url;
                     window.location.href = preview_uri;
 
