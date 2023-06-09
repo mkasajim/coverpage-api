@@ -145,7 +145,7 @@ async def homepage():
                 $('#loader').hide();
 
 
-                var host = "https://" + $(location).attr('hostname') + "/";
+                var host = "https://" + $(location).attr('hostname');
                 var previewAPI = "https://view.officeapps.live.com/op/view.aspx?src=";
 
 
@@ -184,8 +184,11 @@ async def homepage():
                     $('#loader').hide();
                     var download_url = host + response.download_url;
                     console.log(download_url);
+                    var filename = download_url.split('/').pop()
+                    var preview_uri = host + "preview/" + filename;
+                    //window.location.href = previewAPI + download_url;
+                    window.location.href = preview_uri;
 
-                    window.location.href = previewAPI + download_url;
                 },
                 error: function(xhr, status, error) {
                     // Handle errors
