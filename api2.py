@@ -319,6 +319,52 @@ async def download_file(file_name: str):
     file_path = f"downloads/{file_name}"
     return FileResponse(file_path)
 
+@app.get("/preview/{file_name}", response_class=HTMLResponse)
+async def preview():
+    return """
+    <html>
+        <head>
+            <title>Generate Coverpage</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+            <style>
+                html, body {
+                    height:100%;
+                    width:100%;
+                    margin:0;
+                }
+                .h_iframe iframe {
+                    width:100%;
+                    height:100%;
+                }
+                .h_iframe {
+                    height: 100%;
+                    width:100%;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="h_iframe">
+                <iframe src="" 
+                frameborder="0" allowfullscreen>
+                </iframe>
+                <script>
+                var host = "https://" + $(location).attr('hostname') + "/";
+                var download_url = host + "downloads/" + {file_name};
+                var previewAPI = "https://view.officeapps.live.com/op/view.aspx?src=";
+                var URI = previewAPI + download_url + "&amp;wdEmbedCode=0";
+
+                $(document).ready(function(){
+                    
+                        $("iframe").attr("src", URI);
+                    
+                });
+                </script>
+            </div>
+    """
+
 if __name__ == "__main__":
     PORT = int(os.environ.get('PORT', 8080))
     uvicorn.run(app, host="0.0.0.0", port=PORT)
