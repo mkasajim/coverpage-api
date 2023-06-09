@@ -334,6 +334,7 @@ async def preview():
             <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
             <style>
                 html, body {
+                    min-width: 1400px !important;
                     height:100%;
                     width:100%;
                     margin:0;
