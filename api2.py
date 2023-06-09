@@ -328,13 +328,13 @@ async def preview():
     <html>
         <head>
             <title>Coverpage Preview</title>
-            
+            <meta name="viewport" content="width=1024">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
             <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
             <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
             <style>
                 html, body {
-                    min-width: 1400px !important;
+                   
                     height:100%;
                     width:100%;
                     margin:0;
