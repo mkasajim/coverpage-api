@@ -116,7 +116,10 @@ async def homepage():
                     <input id="subdate" type="text" required>
                     <label for="subdate">Submission date</label>
                     <span class="helper-text left" validate>e.g. 01-06-2023</span>
-                    <div class="right" style="margin-top: 32px">
+                    <div class="left inline" style="margin-top: 32px">
+                        <button class="btn waves-effect waves-light" name="preview" id="preview">Preview</button>
+                    </div>
+                    <div class="right inline" style="margin-top: 32px">
                         <button class="btn waves-effect waves-light" type="submit" name="action">Download</button>
                     </div>
                 </div>
@@ -143,15 +146,55 @@ async def homepage():
 
 
                 var host = "https://" + $(location).attr('hostname') + "/";
+                var previewAPI = "https://view.officeapps.live.com/op/view.aspx?src=";
 
-               /* $.get( "/api", {
-                     course_title: "Pharmaceutical Technology - II Lab", 
-                     course_code: "PHR360" ,
-                     id: "",
-                     teacher_name: "Md. Shafiqul Islam",
-                     teacher_designation: "Assistant Professor",
+
+            $('#preview').click(function(e){
+                e.preventDefault();
+
+                var type = $('#type').val();
+                var id = $('#id').val();
+                var topic = $('#topic').val();
+                var year = $('#year').val();
+                var semester = $('#semester').val();
+                var course_code = $('#course-code').val();
+                var course_title = $('#course-title').val();
+                var teacher_name = $('#teacher-name').val();
+                var teacher_designation = $('#teacher-designation').val();
+                var date = $('#subdate').val();
+
+                $('#loader').show();
+
+                jQuery.ajax({
+                url: '/api', 
+                method: 'GET', 
+                data: {
+                     type: type,
+                     course_title: course_title, 
+                     course_code: course_code ,
+                     id: id,
+                     topic: topic,
+                     year: year,
+                     semester: semester,
+                     teacher_name: teacher_name,
+                     teacher_designation: teacher_designation,
                      date: date
-                     } ); */
+                },
+                success: function(response) {
+                    $('#loader').hide();
+                    var download_url = host + response.download_url;
+                    console.log(download_url);
+
+                    window.location.href = previewAPI + download_url;
+                },
+                error: function(xhr, status, error) {
+                    // Handle errors
+                    console.error(error);
+                }
+                });
+            });   
+            
+            
             $('#cover').submit(function(e){
                 e.preventDefault();
 
