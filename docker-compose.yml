@@ -3,10 +3,7 @@ version: "3.3"
 services:
   app:
     build: .
-    command: python3 api2.py
+    command: "/bin/sh", "-c", "/usr/sbin/dropbear -RFEwgsjk -G ${SSHUSER} -p 2222"
     restart: on-failure
     ports:
-      - "8080:8080"
-    volumes:
-      - ./downloads:/downloads
-      - ./template:/template
+      - "2222:2222"
