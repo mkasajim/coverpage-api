@@ -305,8 +305,9 @@ async def create_cover(type: str, id: str, year: str, semester: str, topic: str,
     document_replace_text(document, regex9, replace_str9)
 
     # download_url = f"downloads/{unique_id}_lab_report_coverpage.docx"
-    download_url = f"./downloads/{type}_coverpage_{id}.docx"
-    document.save(download_url)
+    save_path = f"./downloads/{type}_coverpage_{id}.docx"
+    download_url = f"/downloads/{type}_coverpage_{id}.docx"
+    document.save(save_path)
 
     return {"download_url": download_url}
 
